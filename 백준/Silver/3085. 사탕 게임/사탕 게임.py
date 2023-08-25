@@ -52,22 +52,10 @@ for i in range(N):
 max = 0
 for i in range(N):
     for j in range(N):
-        if (0 <= i-1 and i-1 < N) and (map[i][j] != map[i-1][j]):
-            map[i][j], map[i-1][j] = map[i-1][j], map[i][j]
-            m = cal(map, N)
-            map[i][j], map[i - 1][j] = map[i - 1][j], map[i][j]
-            if max < m: max = m
-
         if (0 <= i+1 and i+1 < N) and (map[i][j] != map[i+1][j]):
             map[i][j], map[i+1][j] = map[i+1][j], map[i][j]
             m = cal(map, N)
             map[i][j], map[i + 1][j] = map[i + 1][j], map[i][j]
-            if max < m: max = m
-
-        if (0 <= j-1 and j-1 < N) and (map[i][j-1] != map[i][j-1]):
-            map[i][j], map[i][j-1] = map[i][j-1], map[i][j]
-            m = cal(map, N)
-            map[i][j], map[i][j-1] = map[i][j-1], map[i][j]
             if max < m: max = m
 
         if (0 <= j+1 and j+1 < N) and (map[i][j] != map[i][j+1]):
